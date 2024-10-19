@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-// const cors = require('cors');
+const cors = require('cors');
 const dotenv = require('dotenv');
 const rateLimit = require('express-rate-limit');
 
@@ -35,13 +35,13 @@ app.use('/api/user', limiter);
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// app.use(cors(
-//   {
-//  origin: ["https://plantify-fyp-frontend.vercel.app", "https://plantify-fyp.vercel.app"],
-//     methods:["POST","GET","PUT","DELETE"],
-//     credentials: true
-//   }
-// ));
+app.use(cors(
+  {
+ origin: ["https://plantify-fyp-frontend.vercel.app", "https://plantify-fyp.vercel.app"],
+    methods:["POST","GET","PUT","DELETE"],
+    credentials: true
+  }
+));
 
 // Routes
 app.use("/api/campaigns", campaignRoute);
