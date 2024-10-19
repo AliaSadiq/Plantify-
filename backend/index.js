@@ -23,6 +23,9 @@ const questionRoutes=require("./routes/social-question.route.js");
 const teamroute=require("./routes/team.route.js");
 const app = express();
 
+app.get("/", (req, res) => {
+  res.send("Welcome to Plantify Backend!");
+});
 
 // Rate limiting
 const limiter = rateLimit({
@@ -37,7 +40,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors(
   {
- origin: ["https://plantify-frontend.vercel.app","https://plantifybackend.vercel.app"],
+ origin: ["https://plantify-frontend.vercel.app/","https://plantifybackend.vercel.app/"],
     methods:["POST","GET","PUT","DELETE"],
     credentials: true
   }
