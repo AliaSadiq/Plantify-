@@ -90,7 +90,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors({
-  origin: ["https://plantify-frontend.vercel.app"],
+  origin: ["https://plantify-ui.vercel.app","https://plantifybackend.vercel.app"],
   methods: ["POST", "GET", "PUT", "DELETE"],
   // credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"]
