@@ -92,7 +92,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors({
   origin: ["https://plantify-frontend.vercel.app"],
   methods: ["POST", "GET", "PUT", "DELETE"],
-  credentials: true,
+  // credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
